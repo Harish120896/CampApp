@@ -11,13 +11,19 @@ import { RegisterPage } from "../pages/register/register";
 import { HerokuDataProvider } from '../providers/heroku-data/heroku-data';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { MainPage } from "../pages/main/main";
+import { DetailedViewPage } from "../pages/detailed-view/detailed-view";
+import { MapPage } from "../pages/map/map";
+import { SearchPage } from "../pages/search/search";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     RegisterPage,
-    MainPage
+    MainPage,
+    DetailedViewPage,
+    MapPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,10 @@ import { MainPage } from "../pages/main/main";
     MyApp,
     HomePage,
     RegisterPage,
-    MainPage
+    MainPage,
+    DetailedViewPage,
+    MapPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

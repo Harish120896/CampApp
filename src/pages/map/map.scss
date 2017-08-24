@@ -1,0 +1,23 @@
+page-map {
+    [text-color="my-custom-color"] {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    ion-header ion-icon.back-button-icon.icon {
+        color: #ffffff !important;
+    }
+    .bar-button {
+        color: #fff!important;
+    }
+    .toolbar-background {
+        background: transparent;
+        border: 0px !important;
+        color: #ffffff !important;
+        border-bottom-color: transparent !important;
+        background-image: none !important;
+        border-bottom: none !important;
+    }
+    .background {
+        background-image: url('../assets/bg.jpg');
+        background-size: cover;
+    }
+}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
-import { MainPage } from "../main/main";
+import { SearchPage } from "../search/search";
 
 @Component({
   selector: 'page-register',
@@ -40,7 +40,7 @@ export class RegisterPage {
           text: 'OK',
           handler: data => {
             if (this.createSuccess) {
-              this.navCtrl.setRoot(MainPage);
+              this.navCtrl.setRoot(SearchPage);
             }
           }
         }

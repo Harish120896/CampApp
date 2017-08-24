@@ -1,18 +1,40 @@
-<!--
-  Generated template for the MainPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>MainPage</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content class="background">
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="login()" #registerForm="ngForm">
+        <ion-list no-line>
+          <ion-item>
+            <ion-input type="text" name="camp_name" placeholder="Email" required></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label style="color:#fff">Camp Type</ion-label>
+              <ion-select style="color:#fff" name="gender" [(ngModel)]="gender">
+                <ion-option value="f">Female</ion-option>
+                <ion-option value="m">Male</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label style="color:#fff">Area Where Conducted</ion-label>
+                <ion-select style="color:#fff" name="area"[(ngModel)]="area">
+                    <ion-option value="f">Female</ion-option>
+                    <ion-option value="m">Male</ion-option>
+                  </ion-select>
+            </ion-item>
+          <ion-item>
+              <ion-input type="text" name="Conducting_Date" placeholder="Conducting Date" required></ion-input>
+            </ion-item>
+            <ion-item>
+          <ion-item>
+            <ion-input type="text" name="Contact" placeholder="Contact" required></ion-input>
+          </ion-item>
+            <ion-input type="text" name="Email" placeholder="Email" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" name="Further_Info" placeholder="Additional Info" ></ion-input>
+          </ion-item>
+          <button ion-button block outline color="light" type="submit" [disabled]="!registerForm.form.valid">Register Your Camp</button>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

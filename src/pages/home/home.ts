@@ -3,7 +3,7 @@ import { NavController, Loading, LoadingController, AlertController } from 'ioni
 
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { RegisterPage } from "../register/register";
-import { MainPage } from "../main/main";
+import { SearchPage } from "../search/search";
 
 @Component({
   selector: 'page-home',
@@ -25,7 +25,7 @@ export class HomePage {
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {
       if (allowed) {        
-        this.navCtrl.setRoot(MainPage);
+        this.navCtrl.setRoot(SearchPage);
       } else {
         this.showError("Access Denied");
       }

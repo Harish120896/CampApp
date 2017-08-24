@@ -1,3 +1,37 @@
 page-main {
-
+    .background {
+        background-image: url('../assets/bg.jpg');
+        background-size: cover;
+    }
+    
+    ion-card.card {
+        margin-top: 20%; 
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.17);
+        border-radius: 5px;
+    }
+    .item {
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.32);
+        border: medium none;
+        .text-input,
+        {
+            color: #fff;
+        }
+        input::-moz-placeholder {
+            color: #fff!important;
+        }
+        input:-moz-placeholder {
+            color: #fff!important;
+        }
+        *::-webkit-input-placeholder {
+            color: #fff!important;
+        }
+        *:-ms-input-placeholder {
+            color: #fff!important;
+        }
+        *:-moz-placeholder {
+            color: #fff!important;
+        }
+    }
 }
