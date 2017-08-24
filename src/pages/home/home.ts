@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { RegisterPage } from "../register/register";
+import { HerokuDataProvider } from "../../providers/heroku-data/heroku-data";
 
 @Component({
   selector: 'page-home',
@@ -11,13 +12,12 @@ export class HomePage {
   
   registerCredentials = { email: '', password: '' };
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public herokuDataProvider: HerokuDataProvider) {
 
   }
 
   public createAccount() {
-  console.log("Working.......................");
-    this.navCtrl.push(RegisterPage);
+    this.herokuDataProvider.getData();
   }
  
   public login() {
