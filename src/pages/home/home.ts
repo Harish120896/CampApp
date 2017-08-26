@@ -4,6 +4,7 @@ import { NavController, Loading, LoadingController, AlertController } from 'ioni
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { RegisterPage } from "../register/register";
 import { SearchPage } from "../search/search";
+import { CampListPage } from "../camp-list/camp-list";
 
 @Component({
   selector: 'page-home',

@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { RegisterPage } from "../register/register";
 import { MapPage } from "../map/map";
+import { CampListPage } from "../camp-list/camp-list";
 
 @Component({
   selector: 'page-search',
@@ -17,7 +18,7 @@ export class SearchPage {
     console.log('ionViewDidLoad SearchPage');
   }
   public search(){
-    this.navCtrl.push(MapPage);
+    this.navCtrl.push(CampListPage);
   }
   public register(){
     this.navCtrl.push(RegisterPage);

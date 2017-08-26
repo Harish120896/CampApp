@@ -1,25 +1,59 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewController, NavController, NavParams } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+declare var google;
 
-/**
- * Generated class for the MapPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
 })
 export class MapPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  location: any;
+  destination:String;
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public geolocation: Geolocation, public nativeGeocoder: NativeGeocoder,
+  public viewController: ViewController) {
+    this.destination = this.navParams.get('val');  
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
   }
+  ionViewDidEnter(){
+  //  this.geolocation.getCurrentPosition().then((data)=>this.getCountry(data))
+  //  .catch((error)=>alert(error));
+  
+  }
+  public getCountry(pos){
+    this.nativeGeocoder.reverseGeocode(pos.coords.latitude,pos.coords.longitude)
+    .then((res:NativeGeocoderReverseResult)=>{alert(res.countryName)
+    })
+    .catch((error:any)=>alert(error));   
+  }
+  public calculateAndDisplayRoute() {
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 7,
+      center: {lat: 41.85, lng: -87.65}
+    });
+    directionsDisplay.setMap(map);
+    directionsService.route({
+      origin: this.destination,
+      destination: "hosur",
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+  public Dismiss(){
+    this.viewController.dismiss();
+  }
+  
 
 }

@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,6 +16,7 @@ import { MainPage } from "../pages/main/main";
 import { DetailedViewPage } from "../pages/detailed-view/detailed-view";
 import { MapPage } from "../pages/map/map";
 import { SearchPage } from "../pages/search/search";
+import { CampListPage } from "../pages/camp-list/camp-list";
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { SearchPage } from "../pages/search/search";
     MainPage,
     DetailedViewPage,
     MapPage,
-    SearchPage
+    SearchPage,
+    CampListPage
   ],
   imports: [
     BrowserModule,
@@ -38,14 +42,18 @@ import { SearchPage } from "../pages/search/search";
     MainPage,
     DetailedViewPage,
     MapPage,
-    SearchPage
+    SearchPage,
+    CampListPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HerokuDataProvider,
-    AuthServiceProvider
+    AuthServiceProvider,
+    Geolocation,
+    NativeGeocoder
+
   ]
 })
 export class AppModule {}

@@ -8,5 +8,11 @@
 
 
 <ion-content class="background">
-
+  <ion-card>
+    <ion-card-content>
+      <div id="map"></div>
+    </ion-card-content>
+    <button ion-button (click)="calculateAndDisplayRoute()">Get Directions</button>
+  </ion-card>
+  <button ion-button (click)="Dismiss()">Dismiss</button>
 </ion-content>

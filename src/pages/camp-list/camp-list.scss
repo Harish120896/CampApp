@@ -1,4 +1,4 @@
-page-map {
+page-camp-list {
     [text-color="my-custom-color"] {
         color: rgba(255, 255, 255, 0.8);
     }
@@ -8,11 +8,6 @@ page-map {
     .bar-button {
         color: #fff!important;
     }
-    ion-card.card {
-        box-shadow: none;
-        background: rgba(0, 0, 0, 0.09);
-        border-radius: 5px;
-    }
     .toolbar-background {
         background: transparent;
         border: 0px !important;
@@ -21,11 +16,16 @@ page-map {
         background-image: none !important;
         border-bottom: none !important;
     }
+    .ion-header {
+        color: #ffffff !important;
+    }
+    ion-card.card {
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.09);
+        border-radius: 5px;
+    }
     .background {
         background-image: url('../assets/bg.jpg');
         background-size: cover;
-    }
-    #map{
-        height:50%
     }
 }

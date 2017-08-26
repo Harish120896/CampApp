@@ -3,6 +3,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { SearchPage } from "../search/search";
+import { CampListPage } from "../camp-list/camp-list";
 
 @Component({
   selector: 'page-register',
