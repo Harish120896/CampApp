@@ -21,12 +21,34 @@ export class HomePage {
   public createAccount() {
     this.navCtrl.push(RegisterPage);
   }
+  showConfirm() {
+    let confirm = this.alertCtrl.create({
+      title: 'OPTIONS',
+      message: 'Make Your Choice?',
+      buttons: [
+        {
+          text: 'Register',
+          handler: () => {
+            this.navCtrl.setRoot(RegisterPage);
+          }
+        },
+        {
+          text: 'Search',
+          handler: () => {
+            this.navCtrl.setRoot(CampListPage);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
  
   public login() {
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {        
-        this.navCtrl.setRoot(SearchPage);
+      if (allowed) {  
+        this.showConfirm()     
+        // this.navCtrl.setRoot(SearchPage);
       } else {
         this.showError("Access Denied");
       }

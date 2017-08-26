@@ -10,7 +10,7 @@ export class CampListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController) {
   }
-  items = ["hosur","salem","vellore","padi"];
+  items = ["HOSUR","VELLORE","PANDI","OOTY"];
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad CampListPage');

@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-      <ion-title><span text-color="my-custom-color">CAMP LIST</span></ion-title>
+    <ion-navbar>
+        <ion-title><span text-color="my-custom-color">CAMP LIST</span></ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -15,14 +15,14 @@
 <ion-content class="background">
     <ion-list no-lines>
         <ion-card *ngFor="let item of items" (click)="itemSelected(item)">
-            <ion-card-content>
+            <ion-card-content style="color:white">
                 {{ item }}
-              </ion-card-content>
-          </ion-card>  
-      <!-- <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            </ion-card-content>
+        </ion-card>
+        <!-- <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
           {{ item }}
         </ion-item>  -->
-      </ion-list>
-      
-        
+    </ion-list>
+
+
 </ion-content>

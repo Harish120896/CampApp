@@ -25,7 +25,11 @@ page-map {
         background-image: url('../assets/bg.jpg');
         background-size: cover;
     }
-    #map{
-        height:50%
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+    .dismiss-button {
+        text-align: center;
     }
 }

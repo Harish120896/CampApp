@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 declare var google;
 
 @Component({
@@ -21,6 +21,7 @@ export class MapPage {
     console.log('ionViewDidLoad MapPage');
   }
   ionViewDidEnter(){
+    this.calculateAndDisplayRoute();
   //  this.geolocation.getCurrentPosition().then((data)=>this.getCountry(data))
   //  .catch((error)=>alert(error));
   
@@ -40,8 +41,8 @@ export class MapPage {
     });
     directionsDisplay.setMap(map);
     directionsService.route({
-      origin: this.destination,
-      destination: "hosur",
+      origin: this.destination+"",
+      destination: "chennai",
       travelMode: 'DRIVING'
     }, function(response, status) {
       if (status === 'OK') {
